@@ -140,8 +140,14 @@ position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_wnw8q")
 
 [node name="interactbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="interactbox"]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ffqsc")
 debug_color = Color(0.584556, 0.420416, 0.908604, 0.42)
+
+[connection signal="area_entered" from="interactbox" to="." method="_on_interactbox_area_entered"]
+[connection signal="area_exited" from="interactbox" to="." method="_on_interactbox_area_exited"]

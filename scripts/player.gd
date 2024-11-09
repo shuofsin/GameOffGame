@@ -57,3 +57,25 @@ func _physics_process(delta: float) -> void:
 	set_velocity(current_velocity)
 	move_and_slide()
 	pass
+
+
+func _on_interactbox_body_entered(body: Node2D) -> void:
+	if (body.name == "sign"):
+		print("sign nearby")
+	pass # Replace with function body.
+
+
+func _on_interactbox_body_exited(body: Node2D) -> void:
+	if (body.name == "sign"):
+		print("sign no longer nearby")
+	pass # Replace with function body.
+
+
+func _on_interactbox_area_entered(area: Area2D) -> void:
+	print("entered")
+	pass # Replace with function body.
+
+
+func _on_interactbox_area_exited(area: Area2D) -> void:
+	print("exited")
+	pass # Replace with function body.
