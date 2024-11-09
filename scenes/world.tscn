@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://8qse46faygwv"]
+[gd_scene load_steps=7 format=3 uid="uid://8qse46faygwv"]
 
 [ext_resource type="PackedScene" uid="uid://dgxc32vswsvwk" path="res://scenes/player.tscn" id="1_lt71o"]
 [ext_resource type="Texture2D" uid="uid://brl7ircd0sy4r" path="res://sprites/tiles/grasspath.png" id="2_ev3k8"]
 [ext_resource type="PackedScene" uid="uid://c1gwndghw8ct4" path="res://scenes/sign.tscn" id="3_xgp8k"]
+[ext_resource type="PackedScene" uid="uid://beiof2fm4r4tg" path="res://scenes/star.tscn" id="4_po04e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a33w3"]
 texture = ExtResource("2_ev3k8")
@@ -50,3 +51,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 2, 131072, 0, 2, 196608,
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_xgp8k")]
 position = Vector2(222, 109)
+
+[node name="Star" parent="." instance=ExtResource("4_po04e")]
+position = Vector2(171, 96)
