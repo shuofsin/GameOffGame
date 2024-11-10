@@ -149,5 +149,18 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ffqsc")
 debug_color = Color(0.584556, 0.420416, 0.908604, 0.42)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Label" type="Label" parent="Camera2D"]
+y_sort_enabled = true
+offset_left = -96.0
+offset_top = 32.0
+offset_right = 97.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 12
+text = "Label information here"
+horizontal_alignment = 1
+
 [connection signal="area_entered" from="interactbox" to="." method="_on_interactbox_area_entered"]
 [connection signal="area_exited" from="interactbox" to="." method="_on_interactbox_area_exited"]

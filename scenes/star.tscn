@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://beiof2fm4r4tg"]
+[gd_scene load_steps=3 format=3 uid="uid://beiof2fm4r4tg"]
 
 [ext_resource type="Texture2D" uid="uid://b3ah70h0l0abo" path="res://sprites/star/star.png" id="1_n53li"]
 
-[node name="Star" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_iw8i0"]
+radius = 3.0
+
+[node name="star" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_n53li")
+
+[node name="interact" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
+shape = SubResource("CircleShape2D_iw8i0")

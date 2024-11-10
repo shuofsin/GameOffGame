@@ -8,7 +8,7 @@ size = Vector2(18, 9)
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tw8g"]
 radius = 16.0
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="sign" type="StaticBody2D"]
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true

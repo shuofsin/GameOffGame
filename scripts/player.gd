@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 50; 
 @export var current_velocity = Vector2();
+@onready var label: Label = $Camera2D/Label
 
 enum {STATE_IDLE, STATE_RUN}
 
@@ -14,6 +15,7 @@ var current_animation = "idle"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animation.play(current_animation)
+	label.text = ""
 	pass # Replace with function body.
 
 
@@ -58,24 +60,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	pass
 
-
-func _on_interactbox_body_entered(body: Node2D) -> void:
-	if (body.name == "sign"):
-		print("sign nearby")
-	pass # Replace with function body.
-
-
-func _on_interactbox_body_exited(body: Node2D) -> void:
-	if (body.name == "sign"):
-		print("sign no longer nearby")
-	pass # Replace with function body.
-
-
 func _on_interactbox_area_entered(area: Area2D) -> void:
-	print("entered")
+	# print("entered")
+	if (area.get_parent().name == "star"):
+		label.text = "Press space to pick up secret"
+	elif(area.get_parent().name == "sign"):
+		label.text = "Press space to read sign"
 	pass # Replace with function body.
 
 
 func _on_interactbox_area_exited(area: Area2D) -> void:
-	print("exited")
+	label.text = ""
 	pass # Replace with function body.
